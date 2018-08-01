@@ -5,12 +5,16 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import manageBand from './reducers/manageBand'
 
+
+
 const store = createStore(manageBand)
 
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <App/>
   </Provider>,
   document.getElementById('root')
 );
+
+store.dispatch({type: "@@INIT"})
